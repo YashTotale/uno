@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eec32f2a-9007-46d0-9b85-fe13d2ba9d51" name="Default Changelist" comment="" />
+    <list default="true" id="eec32f2a-9007-46d0-9b85-fe13d2ba9d51" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Uno.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Uno.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnoPile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoPile.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1l1Dcv83klsTUObmHKFMdfIbLJZ" />
   <component name="ProjectViewState">
@@ -14,6 +20,10 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -28,10 +38,25 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="184" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606755912190">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1606755912190" />
+    <state x="433" y="346" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606757985405">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="433" y="346" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1440.900@0.0.1440.900" timestamp="1606757985405" />
   </component>
 </project>
