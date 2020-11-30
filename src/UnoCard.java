@@ -1,9 +1,13 @@
 import java.awt.Graphics;
 
 public class UnoCard {
-	// What are the attributes?
+	private String color;
+	private int rank;
 
-
+	public UnoCard(String color, int rank) {
+		this.color = color;
+		this.rank = rank;
+	}
 
 	/**  This method is called when this UnoCard is being asked
 	 * to draw itself.  Where the card draws itself still needs to be 
@@ -16,16 +20,12 @@ public class UnoCard {
 		
 	}
 
-	// Is String the most appropriate type?  
 	public String getColor() {
-		
-		return null;
+		return this.color;
 	}
-	
-	// Is String the most appropriate type?
-	public String getRank() {
-		// TODO Auto-generated method stub
-		return null;
+
+	public int getRank() {
+		return this.rank;
 	}
 	
 
