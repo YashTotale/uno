@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="eec32f2a-9007-46d0-9b85-fe13d2ba9d51" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Uno.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Uno.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnoCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnoDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoDeck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UnoPile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoPile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +68,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606755912190">

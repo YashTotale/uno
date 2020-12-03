@@ -2,7 +2,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class UnoPile {
 	private ArrayList<UnoCard> pile;
@@ -45,6 +44,11 @@ public class UnoPile {
 	}
 
 	public void shuffle() {
-		Collections.shuffle(pile);
+		for(int i = 0; i < this.pile.size(); i++) {
+			UnoCard temp = this.pile.get(i);
+			this.pile.remove(i);
+			int random = (int) ((this.pile.size() - 1) * Math.random());
+			this.pile.add(random, temp);
+		}
 	}
 }
