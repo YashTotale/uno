@@ -56,6 +56,10 @@ public class UnoPile {
 		}
 	}
 
+	public UnoCard get(int index) {
+		return this.pile.get(index);
+	}
+
 	public String toString() {
 		return this.pile.toString();
 	}

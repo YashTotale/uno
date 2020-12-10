@@ -15,7 +15,7 @@ public class UnoTester {
 
     // setting the Testing mode to Cards.  Change this when
     // you are ready to test the Deck class or Player class or Game
-    private TestingMode tm = TestingMode.DECK;
+    private TestingMode tm = TestingMode.PILE;
     private UnoDeck ud = new UnoDeck();
     private ArrayList<UnoCard> listOfCards = new ArrayList<>();
     private int numRepaints = 0;
@@ -104,14 +104,45 @@ public class UnoTester {
     }
 
     private void testUnoPile() {
-        UnoPile up = new UnoPile();
-        for (int x = 0; x < 5; x++) {
-            up.add(this.listOfCards.get(x));
-            System.out.println(up);
-        }
-        up.shuffle();
-        for (int x = 0; x < 2; x++) {
+        try {
+            System.out.println("\n-----\nTesting UnoPile\n");
+            UnoPile pile = new UnoPile();
 
+            //size
+            if (pile.size() != 0) {
+                throw new Exception("size does not work");
+            }
+            System.out.println("size works");
+
+            //add & get
+            UnoCard second = new UnoCard(Color.GREEN, 4);
+            pile.add(second);
+            UnoCard first = new UnoCard(Color.GREEN, 2);
+            pile.add(first);
+            UnoCard third = new UnoCard(Color.RED, 1);
+            pile.add(third);
+
+            if (!pile.get(0).equals(first)) {
+                throw new Exception("add or get does not work");
+            }
+            if (!pile.get(1).equals(second)) {
+                throw new Exception("add or get does not work");
+            }
+            if (!pile.get(2).equals(third)) {
+                throw new Exception("add or get does not work");
+            }
+            System.out.println("add and get work");
+
+            //shuffle
+            pile.shuffle();
+            if(pile.size() != 3) {
+                throw new Exception("shuffle does not work");
+            }
+            System.out.println("shuffle works");
+
+            System.out.println("\nUnoPile:\n" + pile + "\n\n-----");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
