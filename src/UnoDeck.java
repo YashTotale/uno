@@ -1,24 +1,39 @@
-import java.awt.Graphics;
+import java.awt.*;
 
 public class UnoDeck extends UnoPile {
 
-	private String[] colors;
+	private Color[] colors;
 
 	public UnoDeck() {
 		super();
-		this.colors = new String[]{"red", "yellow", "green", "blue"};
-		for(String color: colors) {
+		this.colors = new Color[]{Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE};
+		for(Color color: colors) {
 			createSuite(color);
+		}
+		for(int i = 0; i < 2; i++) {
+			//Add 2 Wild Cards
+			this.add(new UnoCard(Color.BLACK, 13));
+			//Add 2 Draw 4 Cards
+			this.add(new UnoCard(Color.BLACK, 14));
 		}
 	}
 
-	private void createSuite(String color) {
-		for(int i = 0; i < 10; i++) {
+	/**
+	 * @param color The color of the suite of cards
+	 * Create a suite (2 cards of each rank) of cards for a specific color
+	 */
+	private void createSuite(Color color) {
+		for(int i = 0; i < 13; i++) {
 			createCard(color, i);
 		}
 	}
 
-	private void createCard(String color, int rank) {
+	/**
+	 * @param color The color of each card
+	 * @param rank The rank of each card (0-9, 10: Reverse, 11: Skip, 12: Draw 2)
+	 * Create 2 cards for the specific rank and color
+	 */
+	private void createCard(Color color, int rank) {
 		for(int x = 0; x < 2; x++) {
 			this.add(new UnoCard(color, rank));
 		}
@@ -29,7 +44,4 @@ public class UnoDeck extends UnoPile {
 	public void draw(Graphics g) {
 		
 	}
-	
-
-	
 }
