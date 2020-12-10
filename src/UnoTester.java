@@ -16,7 +16,6 @@ public class UnoTester {
     // setting the Testing mode to Cards.  Change this when
     // you are ready to test the Deck class or Player class or Game
     private TestingMode tm = TestingMode.PILE;
-    private UnoDeck ud = new UnoDeck();
     private ArrayList<UnoCard> listOfCards = new ArrayList<>();
     private int numRepaints = 0;
 
@@ -133,9 +132,19 @@ public class UnoTester {
             }
             System.out.println("add and get work");
 
+            //deal
+            UnoCard dealt = pile.deal();
+            if(pile.size() != 2) {
+                throw new Exception("deal does not work");
+            }
+            if(!dealt.equals(first)) {
+                throw new Exception("deal does not work");
+            }
+            System.out.println("deal works");
+
             //shuffle
             pile.shuffle();
-            if(pile.size() != 3) {
+            if(pile.size() != 2) {
                 throw new Exception("shuffle does not work");
             }
             System.out.println("shuffle works");
@@ -147,18 +156,18 @@ public class UnoTester {
     }
 
     private void testUnoDeck() {
-        UnoDeck ud = new UnoDeck();
+        UnoDeck deck = new UnoDeck();
 
 
         for (int i = 0; i < 5; i++) {
-            System.out.println(ud.deal());
+            System.out.println(deck.deal());
         }
-        System.out.println(ud);
-        while (ud.size() > 0) {
-            if (ud.size() % 3 == 0) {
-                listOfCards.add(ud.deal());
+        System.out.println(deck);
+        while (deck.size() > 0) {
+            if (deck.size() % 3 == 0) {
+                listOfCards.add(deck.deal());
             } else {
-                ud.deal();
+                deck.deal();
             }
         }
 
