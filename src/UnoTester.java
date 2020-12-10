@@ -8,22 +8,16 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class UnoTester {
-    // This is like a new data type that can be one of 4 choices
     private enum TestingMode {CARDS, PILE, DECK, PLAYER, GAME}
 
-    ;
-
-    // setting the Testing mode to Cards.  Change this when
-    // you are ready to test the Deck class or Player class or Game
-    private TestingMode tm = TestingMode.PILE;
-    private ArrayList<UnoCard> listOfCards = new ArrayList<>();
+    private TestingMode tm = TestingMode.DECK;
     private int numRepaints = 0;
 
     public static void main(String[] args) {
         System.out.println("Testing classes");
         UnoTester ut = new UnoTester();
-        ut.testUnoCards();
         ut.init();
+        ut.testStuff();
     }
 
     /**
@@ -31,9 +25,6 @@ public class UnoTester {
      */
     private void init() {
         JPanel panel = new JPanel() {
-            /** this is a super-important method when working with
-             * javax swing graphics.  All drawing is invoked from here.
-             */
             public void paintComponent(Graphics g) {
                 super.paintComponent(g);// basically clears the canvas
                 numRepaints++;
@@ -50,37 +41,32 @@ public class UnoTester {
         frame.setVisible(true);
     }
 
-    protected void drawStuff(Graphics g) {
+    protected void testStuff() {
         switch (tm) {
             case CARDS:
-                testUnoCards();
-                for (UnoCard uc : this.listOfCards)
-                    uc.draw(g);
+                testUnoCard();
                 break;
             case PILE:
                 testUnoPile();
-                // other code
                 break;
             case DECK:
                 testUnoDeck();
-                // other code
                 break;
             case PLAYER:
                 testUnoPlayer();
-                // other code
                 break;
             case GAME:
                 testUnoGame();
-                // other code
                 break;
         }
+    }
 
+    protected void drawStuff(Graphics g) {
 
     }
 
     private void testUnoGame() {
         UnoGame ug = new UnoGame();
-
 
     }
 
@@ -107,11 +93,11 @@ public class UnoTester {
             System.out.println("\n-----\nTesting UnoPile\n");
             UnoPile pile = new UnoPile();
 
-            //size
+            //size & constructor
             if (pile.size() != 0) {
                 throw new Exception("size does not work");
             }
-            System.out.println("size works");
+            System.out.println("size & constructor work");
 
             //add & get
             UnoCard second = new UnoCard(Color.GREEN, 4);
@@ -156,26 +142,30 @@ public class UnoTester {
     }
 
     private void testUnoDeck() {
-        UnoDeck deck = new UnoDeck();
+        try {
+            System.out.println("\n-----\nTesting UnoCard\n");
 
+            UnoDeck deck = new UnoDeck();
 
-        for (int i = 0; i < 5; i++) {
-            System.out.println(deck.deal());
-        }
-        System.out.println(deck);
-        while (deck.size() > 0) {
-            if (deck.size() % 3 == 0) {
-                listOfCards.add(deck.deal());
-            } else {
-                deck.deal();
+            //constructor
+            if(deck.size() != 108) {
+                throw new Exception("UnoDeck constructor does not work");
             }
+            System.out.println("constructor works");
+
+            System.out.println("\nUnoDeck:\n" + deck + "\n\n-----");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
     }
 
-    private void testUnoCards() {
+    private void testUnoCard() {
         try {
             System.out.println("\n-----\nTesting UnoCard\n");
+
+            ArrayList<UnoCard> listOfCards = new ArrayList();
+
             UnoCard g1 = new UnoCard(Color.GREEN, 1), b9 = new UnoCard(Color.BLUE, 9), y5 = new UnoCard(Color.YELLOW, 5), r2 = new UnoCard(Color.RED, 2), gReverse = new UnoCard(Color.GREEN, 10),
                     ySkip = new UnoCard(Color.YELLOW, 11), rDraw2 = new UnoCard(Color.RED, 12), wild = new UnoCard(Color.BLACK, 13), wildDraw4 = new UnoCard(Color.BLACK, 14);
 
@@ -183,8 +173,7 @@ public class UnoTester {
             UnoCard[] ucArr = new UnoCard[]{g1, b9, y5, r2, gReverse,
                     ySkip, rDraw2, wild, wildDraw4};
 
-            this.listOfCards.addAll(Arrays.asList(ucArr));
-
+            listOfCards.addAll(Arrays.asList(ucArr));
 
             //getColor
             Color color = listOfCards.get(0).getColor();
@@ -203,7 +192,7 @@ public class UnoTester {
             System.out.println("getRank works");
 
 
-            System.out.println("\nUnoCard list:\n" + this.listOfCards + "\n\n-----");
+            System.out.println("\nUnoCard list:\n" + listOfCards + "\n\n-----");
 
         } catch (Exception e) {
             e.printStackTrace();
