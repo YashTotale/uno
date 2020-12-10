@@ -21,9 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="eec32f2a-9007-46d0-9b85-fe13d2ba9d51" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnoPile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoPile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UnoPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnoTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

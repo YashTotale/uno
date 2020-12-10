@@ -25,7 +25,7 @@ public class UnoPlayer {
 	 * @param card The UnoCard to match
 	 * @return The next UnoCard to play
 	 */
-	public UnoCard getNextCard(UnoCard card) {
+	public UnoCard getNextCard(@NotNull UnoCard card) {
 		Color color = card.getColor();
 		int rank = card.getRank();
 
