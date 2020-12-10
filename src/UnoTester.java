@@ -32,7 +32,7 @@ public class UnoTester {
                 drawStuff(g);
             }
         };
-        panel.setBackground(new Color(100, 220, 100));
+        panel.setBackground(new Color(34, 222, 34));
         panel.setPreferredSize(new Dimension(800, 600));
         JFrame frame = new JFrame("Testing Uno Classes");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

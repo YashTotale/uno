@@ -19,6 +19,13 @@ public class UnoPile {
 		return this.pile.size();
 	}
 
+	public UnoCard deal(int index) {
+		if(index >= 0 && this.pile.size() > index) {
+			return this.pile.remove(index);
+		}
+		return null;
+	}
+
 	public UnoCard deal() {
 		if(this.pile.size() > 0) {
 			return this.pile.remove(0);
