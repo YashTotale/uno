@@ -71,20 +71,21 @@ public class UnoTester {
     }
 
     private void testUnoPlayer() {
-        UnoPlayer up1 = new UnoPlayer("Player 1"),
-                up2 = new UnoPlayer("Player 2");
-        UnoDeck ud = new UnoDeck();
-        for (int x = 0; x < 7; x++) {
-            up1.addCard(ud.deal());
-            up2.addCard(ud.deal());
+        try {
+            //constructor
+            UnoPlayer up1 = new UnoPlayer("Player 1");
+            UnoDeck ud = new UnoDeck();
+            for (int x = 0; x < 7; x++) {
+                up1.addCard(ud.deal());
+            }
+            System.out.println(up1);
+            UnoCard top = ud.deal();
+            UnoCard uc1 = up1.getNextCard(top);
+            System.out.println(up1);
+            System.out.println(uc1);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        System.out.println(up1);
-        System.out.println(up2);
-        UnoCard top = ud.deal();
-        UnoCard uc1 = up1.getNextCard(top),
-                uc2 = up2.getNextCard(top);
-        System.out.println(up1);
-        System.out.println(uc1);
 
     }
 
@@ -100,11 +101,11 @@ public class UnoTester {
             System.out.println("size & constructor work");
 
             //add & get
-            UnoCard second = new UnoCard(Color.GREEN, 4);
+            UnoCard first = new UnoCard(Color.GREEN, 2),
+                    second = new UnoCard(Color.GREEN, 4),
+                    third = new UnoCard(Color.RED, 1);
             pile.add(second);
-            UnoCard first = new UnoCard(Color.GREEN, 2);
             pile.add(first);
-            UnoCard third = new UnoCard(Color.RED, 1);
             pile.add(third);
 
             if (!pile.get(0).equals(first)) {
@@ -164,19 +165,15 @@ public class UnoTester {
         try {
             System.out.println("\n-----\nTesting UnoCard\n");
 
-            ArrayList<UnoCard> listOfCards = new ArrayList();
-
             UnoCard g1 = new UnoCard(Color.GREEN, 1), b9 = new UnoCard(Color.BLUE, 9), y5 = new UnoCard(Color.YELLOW, 5), r2 = new UnoCard(Color.RED, 2), gReverse = new UnoCard(Color.GREEN, 10),
                     ySkip = new UnoCard(Color.YELLOW, 11), rDraw2 = new UnoCard(Color.RED, 12), wild = new UnoCard(Color.BLACK, 13), wildDraw4 = new UnoCard(Color.BLACK, 14);
 
 
-            UnoCard[] ucArr = new UnoCard[]{g1, b9, y5, r2, gReverse,
+            UnoCard[] listOfCards = new UnoCard[]{g1, b9, y5, r2, gReverse,
                     ySkip, rDraw2, wild, wildDraw4};
 
-            listOfCards.addAll(Arrays.asList(ucArr));
-
             //getColor
-            Color color = listOfCards.get(0).getColor();
+            Color color = listOfCards[0].getColor();
 
             if (!color.equals(Color.GREEN)) {
                 throw new Exception("getColor does not work");
@@ -184,19 +181,17 @@ public class UnoTester {
             System.out.println("getColor works");
 
             //getRank
-            int rank = listOfCards.get(0).getRank();
+            int rank = listOfCards[0].getRank();
 
             if (rank != 1) {
                 throw new Exception("getRank does not work");
             }
             System.out.println("getRank works");
 
-
             System.out.println("\nUnoCard list:\n" + listOfCards + "\n\n-----");
 
         } catch (Exception e) {
             e.printStackTrace();
-
         }
     }
 }
