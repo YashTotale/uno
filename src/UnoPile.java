@@ -34,7 +34,7 @@ public class UnoPile {
 	}
 
 	public void add(@NotNull UnoCard unoCard) {
-		Color color = unoCard.getColor();
+		UnoCard.CardColors color = unoCard.getColor();
 		int rank = unoCard.getRank();
 
 		for (int i = 0; i < this.pile.size(); i++) {

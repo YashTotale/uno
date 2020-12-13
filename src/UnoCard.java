@@ -1,14 +1,15 @@
 import java.awt.*;
 
 public class UnoCard {
-    private final Color color;
+    public enum CardColors {RED, YELLOW, GREEN, BLUE, BLACK}
+    private final CardColors color;
     /**
      * 0-9, 10: Reverse, 11: Skip, 12: Draw 2.
      * For Black cards, 13: Wild and 14: Draw 4
      */
     private final int rank;
 
-    public UnoCard(Color color, int rank) {
+    public UnoCard(CardColors color, int rank) {
         this.color = color;
         this.rank = rank;
     }
@@ -26,7 +27,7 @@ public class UnoCard {
 
     }
 
-    public Color getColor() {
+    public CardColors getColor() {
         return this.color;
     }
 
@@ -37,19 +38,17 @@ public class UnoCard {
     public String toString() {
         return "<UnoCard> (Color: " +
                 (
-                        this.color.equals(Color.RED)
+                        this.color.equals(CardColors.RED)
                                 ? "Red"
-                                : this.color.equals(Color.YELLOW)
+                                : this.color.equals(CardColors.YELLOW)
                                 ? "Yellow"
-                                : this.color.equals(Color.BLUE)
+                                : this.color.equals(CardColors.BLUE)
                                 ? "Blue"
-                                : this.color.equals(Color.GREEN)
+                                : this.color.equals(CardColors.GREEN)
                                 ? "Green"
-                                : this.color.equals(Color.BLACK)
+                                : this.color.equals(CardColors.BLACK)
                                 ? "Black"
                                 : "Unknown"
                 ) + ", Rank: " + this.rank + ")";
     }
-
-
 }

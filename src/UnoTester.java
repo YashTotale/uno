@@ -101,9 +101,9 @@ public class UnoTester {
             System.out.println("size & constructor work");
 
             //add & get
-            UnoCard first = new UnoCard(Color.GREEN, 2),
-                    second = new UnoCard(Color.GREEN, 4),
-                    third = new UnoCard(Color.RED, 1);
+            UnoCard first = new UnoCard(UnoCard.CardColors.GREEN, 2),
+                    second = new UnoCard(UnoCard.CardColors.GREEN, 4),
+                    third = new UnoCard(UnoCard.CardColors.RED, 1);
             pile.add(second);
             pile.add(first);
             pile.add(third);
@@ -165,17 +165,17 @@ public class UnoTester {
         try {
             System.out.println("\n-----\nTesting UnoCard\n");
 
-            UnoCard g1 = new UnoCard(Color.GREEN, 1), b9 = new UnoCard(Color.BLUE, 9), y5 = new UnoCard(Color.YELLOW, 5), r2 = new UnoCard(Color.RED, 2), gReverse = new UnoCard(Color.GREEN, 10),
-                    ySkip = new UnoCard(Color.YELLOW, 11), rDraw2 = new UnoCard(Color.RED, 12), wild = new UnoCard(Color.BLACK, 13), wildDraw4 = new UnoCard(Color.BLACK, 14);
+            UnoCard g1 = new UnoCard(UnoCard.CardColors.GREEN, 1), b9 = new UnoCard(UnoCard.CardColors.BLUE, 9), y5 = new UnoCard(UnoCard.CardColors.YELLOW, 5), r2 = new UnoCard(UnoCard.CardColors.RED, 2), gReverse = new UnoCard(UnoCard.CardColors.GREEN, 10),
+                    ySkip = new UnoCard(UnoCard.CardColors.YELLOW, 11), rDraw2 = new UnoCard(UnoCard.CardColors.RED, 12), wild = new UnoCard(UnoCard.CardColors.BLACK, 13), wildDraw4 = new UnoCard(UnoCard.CardColors.BLACK, 14);
 
 
             UnoCard[] listOfCards = new UnoCard[]{g1, b9, y5, r2, gReverse,
                     ySkip, rDraw2, wild, wildDraw4};
 
             //getColor
-            Color color = listOfCards[0].getColor();
+            UnoCard.CardColors color = listOfCards[0].getColor();
 
-            if (!color.equals(Color.GREEN)) {
+            if (!color.equals(UnoCard.CardColors.GREEN)) {
                 throw new Exception("getColor does not work");
             }
             System.out.println("getColor works");

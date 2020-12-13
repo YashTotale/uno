@@ -26,7 +26,7 @@ public class UnoPlayer {
 	 * @return The next UnoCard to play
 	 */
 	public UnoCard getNextCard(@NotNull UnoCard card) {
-		Color color = card.getColor();
+		UnoCard.CardColors color = card.getColor();
 		int rank = card.getRank();
 
 		int draw4Index = -1;
@@ -34,11 +34,11 @@ public class UnoPlayer {
 
 		for(int i = 0; i < hand.size(); i++) {
 			UnoCard current = hand.get(i);
-			Color currentColor = current.getColor();
+			UnoCard.CardColors currentColor = current.getColor();
 			int currentRank = current.getRank();
 
 			//Wild Card
-			if(currentColor.equals(Color.BLACK)) {
+			if(currentColor.equals(UnoCard.CardColors.BLACK)) {
 				if(currentRank == 13) {
 					wildIndex = i;
 				}
@@ -49,7 +49,7 @@ public class UnoPlayer {
 			}
 
 			//Previous card is Wild Card -> Play any card
-			if(color.equals(Color.BLACK)) {
+			if(color.equals(UnoCard.CardColors.BLACK)) {
 				return hand.deal(i);
 			}
 
