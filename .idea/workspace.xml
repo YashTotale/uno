@@ -20,14 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eec32f2a-9007-46d0-9b85-fe13d2ba9d51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/saveactions_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnoCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnoDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoDeck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UnoGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnoPile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoPile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnoPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnoTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,25 +93,25 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="170" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1607358538826" />
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1607898362879">
+    <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1607898638480">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607898362879" />
+    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607898638480" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.25.1440.791@0.25.1440.791" timestamp="1607561286502" />
-    <state width="1398" height="244" key="GridCell.Tab.0.center" timestamp="1607898362878">
+    <state width="1398" height="244" key="GridCell.Tab.0.center" timestamp="1607898638479">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1607898362878" />
+    <state width="1398" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1607898638479" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.25.1440.791@0.25.1440.791" timestamp="1607561286501" />
-    <state width="1398" height="244" key="GridCell.Tab.0.left" timestamp="1607898362878">
+    <state width="1398" height="244" key="GridCell.Tab.0.left" timestamp="1607898638479">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1607898362878" />
+    <state width="1398" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1607898638479" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.25.1440.791@0.25.1440.791" timestamp="1607561286501" />
-    <state width="1398" height="244" key="GridCell.Tab.0.right" timestamp="1607898362879">
+    <state width="1398" height="244" key="GridCell.Tab.0.right" timestamp="1607898638480">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607898362879" />
+    <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607898638480" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.25.1440.791@0.25.1440.791" timestamp="1607561286502" />
     <state x="229" y="86" key="SettingsEditor" timestamp="1607898453002">
       <screen x="0" y="0" width="1440" height="900" />

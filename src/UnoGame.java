@@ -1,6 +1,6 @@
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.Graphics;
+import java.awt.*;
 import java.util.ArrayList;
 
 public class UnoGame {
@@ -14,7 +14,25 @@ public class UnoGame {
     public UnoGame() {
     }
 
+    public UnoGame(ArrayList<UnoPlayer> players) {
+        this.addPlayers(players);
+    }
+
     public UnoGame(UnoPlayer[] players) {
+        this.addPlayers(players);
+    }
+
+    public UnoGame(@NotNull UnoPlayer player) {
+        this.addPlayer(player);
+    }
+
+    public void addPlayers(ArrayList<UnoPlayer> players) {
+        for (UnoPlayer player : players) {
+            this.addPlayer(player);
+        }
+    }
+
+    public void addPlayers(UnoPlayer[] players) {
         for (UnoPlayer player : players) {
             this.addPlayer(player);
         }
@@ -32,6 +50,10 @@ public class UnoGame {
         if (this.players.size() == 0) return null;
         while (index < 0) index = this.players.size() + index;
         return this.players.get(index % this.players.size());
+    }
+
+    public void switchDirection() {
+        this.isClockwise = !this.isClockwise;
     }
 
     public void setUpGame(int numCards) {
@@ -70,13 +92,13 @@ public class UnoGame {
     }
 
     private void incrementTurn() {
-        this.currPlayer += (isClockwise ? 1 : -1);
+        this.currPlayer += (this.isClockwise ? 1 : -1);
     }
 
     public void playGame() {
         while (!this.gameOver()) {
             UnoPlayer currentPlayer = this.getPlayer(this.currPlayer);
-            UnoPlayer nextPlayer = this.getPlayer(this.currPlayer + (isClockwise ? 1 : -1));
+            UnoPlayer nextPlayer = this.getPlayer(this.currPlayer + (this.isClockwise ? 1 : -1));
             // Gets the last card of discard pile (top card)
             UnoCard lastCard = this.discardPile.get(this.discardPile.size() - 1);
             //Add a card to player's hand while no card matches
@@ -87,7 +109,7 @@ public class UnoGame {
             int rank = nextCard.getRank();
             //Reverse Card -> Switch directions
             if (rank == 10) {
-                this.isClockwise = !this.isClockwise;
+                this.switchDirection();
             }
             //Skip Card -> increment turn
             if (rank == 11) {
