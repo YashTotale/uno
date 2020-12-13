@@ -21,8 +21,15 @@
   <component name="ChangeListManager">
     <list default="true" id="eec32f2a-9007-46d0-9b85-fe13d2ba9d51" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnoCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnoDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UnoCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UnoCard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UnoDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UnoDeck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UnoGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UnoGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UnoPile.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UnoPile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UnoPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UnoPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UnoTester$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UnoTester$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UnoTester$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UnoTester$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UnoTester$TestingMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UnoTester$TestingMode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UnoTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UnoTester.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UnoGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UnoPile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoPile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UnoPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnoPlayer.java" afterDir="false" />
@@ -96,25 +103,25 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="170" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1607358538826" />
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1607566153412">
+    <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1607897207987">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607566153412" />
+    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607897207987" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.25.1440.791@0.25.1440.791" timestamp="1607561286502" />
-    <state width="1398" height="244" key="GridCell.Tab.0.center" timestamp="1607566153411">
+    <state width="1398" height="244" key="GridCell.Tab.0.center" timestamp="1607897207986">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1607566153411" />
+    <state width="1398" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1607897207986" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.25.1440.791@0.25.1440.791" timestamp="1607561286501" />
-    <state width="1398" height="244" key="GridCell.Tab.0.left" timestamp="1607566153410">
+    <state width="1398" height="244" key="GridCell.Tab.0.left" timestamp="1607897207986">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1607566153410" />
+    <state width="1398" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1607897207986" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.25.1440.791@0.25.1440.791" timestamp="1607561286501" />
-    <state width="1398" height="244" key="GridCell.Tab.0.right" timestamp="1607566153411">
+    <state width="1398" height="244" key="GridCell.Tab.0.right" timestamp="1607897207987">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607566153411" />
+    <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607897207987" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.25.1440.791@0.25.1440.791" timestamp="1607561286502" />
     <state x="433" y="346" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606757985405">
       <screen x="0" y="0" width="1440" height="900" />

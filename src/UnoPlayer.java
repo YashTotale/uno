@@ -1,16 +1,15 @@
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
+import java.util.HashMap;
 
 public class UnoPlayer {
 	private String name;
-	private UnoPile hand;
+	private UnoPile hand = new UnoPile();
 	private int x, y;
-	private boolean isTurn;
-
 
 	public UnoPlayer(String name) {
-
+		this.name = name;
 	}
 
 	public void draw(Graphics g) {
@@ -18,7 +17,7 @@ public class UnoPlayer {
 	}
 
 	public void addCard(UnoCard card) {
-		this.hand.add(card);
+		this.hand.addInOrder(card);
 	}
 
 	/**
@@ -72,7 +71,42 @@ public class UnoPlayer {
 				: null;
 	}
 
+	public UnoCard.CardColors mostColors() {
+		return this.mostColors(UnoCard.CardColors.BLUE);
+	}
+
+	public UnoCard.CardColors mostColors(UnoCard.CardColors defaultColor) {
+		//Stores the colors and their amounts
+		HashMap<UnoCard.CardColors, Integer> colorAmounts = new HashMap();
+		//Put all colors except black into hashmap
+		for(UnoCard.CardColors color : UnoCard.CardColors.values()) {
+			if(!color.equals(UnoCard.CardColors.BLACK)) colorAmounts.put(color, 0);
+		}
+		//Put the corresponding amounts for each color in the hashmap
+		for(int i = 0; i < this.hand.size(); i++) {
+			UnoCard card = this.hand.get(i);
+			UnoCard.CardColors cardColor = card.getColor();
+			if(cardColor.equals(UnoCard.CardColors.BLACK)) continue;
+			colorAmounts.put(cardColor, colorAmounts.get(cardColor) + 1);
+		}
+		UnoCard.CardColors mostColor = defaultColor;
+		int most = Integer.MIN_VALUE;
+		//Find the greatest amount
+		for(UnoCard.CardColors color: colorAmounts.keySet()) {
+			int amount = colorAmounts.get(color);
+			if(amount > most) {
+				most = amount;
+				mostColor = color;
+			}
+		}
+		return mostColor;
+	}
+
 	public int cardsLeft() {
 		return this.hand.size();
+	}
+
+	public String getName() {
+		return this.name;
 	}
 }
