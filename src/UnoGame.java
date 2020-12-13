@@ -29,8 +29,8 @@ public class UnoGame {
     }
 
     public UnoPlayer getPlayer(int index) {
-        if(this.players.size() == 0) return null;
-        while(index < 0) index = this.players.size() + index;
+        if (this.players.size() == 0) return null;
+        while (index < 0) index = this.players.size() + index;
         return this.players.get(index % this.players.size());
     }
 
@@ -70,7 +70,7 @@ public class UnoGame {
     }
 
     private void incrementTurn() {
-        this.currPlayer+=(isClockwise ? 1 : -1);
+        this.currPlayer += (isClockwise ? 1 : -1);
     }
 
     public void playGame() {
@@ -95,12 +95,12 @@ public class UnoGame {
             }
             //Draw 2 Card -> draw 2 for next player and increment turn
             if (rank == 12) {
-                for(int i = 0; i < 2; i++) nextPlayer.addCard(this.dealDrawPile());
+                for (int i = 0; i < 2; i++) nextPlayer.addCard(this.dealDrawPile());
                 this.incrementTurn();
             }
-            //Draw 2 Card -> draw 4 for next player and increment turn
+            //Draw 4 Card -> draw 4 for next player and increment turn
             if (rank == 13) {
-                for(int i = 0; i < 2; i++) nextPlayer.addCard(this.dealDrawPile());
+                for (int i = 0; i < 2; i++) nextPlayer.addCard(this.dealDrawPile());
                 this.incrementTurn();
             }
             this.discardPile.add(nextCard);

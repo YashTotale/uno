@@ -2,6 +2,7 @@ import java.awt.*;
 
 public class UnoCard {
     public enum CardColors {RED, YELLOW, GREEN, BLUE, BLACK}
+
     private final CardColors color;
     /**
      * 0-9, 10: Reverse, 11: Skip, 12: Draw 2.

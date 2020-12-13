@@ -1,11 +1,6 @@
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.sql.Array;
+import javax.swing.*;
+import java.awt.*;
 import java.util.Arrays;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 public class UnoTester {
     private enum TestingMode {CARDS, PILE, DECK, PLAYER, GAME, ALL}
@@ -27,9 +22,9 @@ public class UnoTester {
         JPanel panel = new JPanel() {
             public void paintComponent(Graphics g) {
                 super.paintComponent(g);// basically clears the canvas
-                numRepaints++;
+                UnoTester.this.numRepaints++;
                 //System.out.println("painting!! " + numRepaints);
-                drawStuff(g);
+                UnoTester.this.drawStuff(g);
             }
         };
         panel.setBackground(new Color(34, 222, 34));
@@ -42,28 +37,28 @@ public class UnoTester {
     }
 
     protected void testStuff() {
-        switch (tm) {
+        switch (this.tm) {
             case CARDS:
-                testUnoCard();
+                this.testUnoCard();
                 break;
             case PILE:
-                testUnoPile();
+                this.testUnoPile();
                 break;
             case DECK:
-                testUnoDeck(true);
+                this.testUnoDeck(true);
                 break;
             case PLAYER:
-                testUnoPlayer();
+                this.testUnoPlayer();
                 break;
             case GAME:
-                testUnoGame();
+                this.testUnoGame();
                 break;
             case ALL:
-                testUnoCard();
-                testUnoPile();
-                testUnoDeck(false);
-                testUnoPlayer();
-                testUnoGame();
+                this.testUnoCard();
+                this.testUnoPile();
+                this.testUnoDeck(false);
+                this.testUnoPlayer();
+                this.testUnoGame();
                 break;
         }
     }
@@ -216,7 +211,7 @@ public class UnoTester {
             }
             System.out.println("constructor works");
 
-            if(printDeck) System.out.println("\nUnoDeck:\n" + deck + "\n");
+            if (printDeck) System.out.println("\nUnoDeck:\n" + deck + "\n");
             System.out.println("-----");
         } catch (Exception e) {
             e.printStackTrace();
