@@ -1,7 +1,6 @@
 # Uno
 
-Todo
+## Todo
 
 - [ ] Create draw methods
-- [ ] Test UnoPlayer
-- [ ] Create UnoGame class
+- [ ] Test UnoGame
