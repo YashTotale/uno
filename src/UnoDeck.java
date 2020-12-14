@@ -7,9 +7,7 @@ public class UnoDeck extends UnoPile {
     public UnoDeck() {
         super();
         this.colors = new UnoCard.CardColors[]{UnoCard.CardColors.RED, UnoCard.CardColors.YELLOW, UnoCard.CardColors.GREEN, UnoCard.CardColors.BLUE};
-        for (UnoCard.CardColors color : colors) {
-            createSuite(color);
-        }
+        for (UnoCard.CardColors color : this.colors) this.createSuite(color);
         for (int i = 0; i < 2; i++) {
             //Add 2 Wild Cards
             this.add(new UnoCard(UnoCard.CardColors.BLACK, 13));
@@ -23,9 +21,7 @@ public class UnoDeck extends UnoPile {
      *              Create a suite (2 cards of each rank) of cards for a specific color
      */
     private void createSuite(UnoCard.CardColors color) {
-        for (int i = 0; i < 13; i++) {
-            createCard(color, i);
-        }
+        for (int i = 0; i < 13; i++) this.createCard(color, i);
     }
 
     /**
@@ -34,9 +30,7 @@ public class UnoDeck extends UnoPile {
      *              Create 2 cards for the specific rank and color
      */
     private void createCard(UnoCard.CardColors color, int rank) {
-        for (int x = 0; x < 2; x++) {
-            this.add(new UnoCard(color, rank));
-        }
+        for (int x = 0; x < 2; x++) this.add(new UnoCard(color, rank));
     }
 
     // not sure what we want to do when we draw the deck.

@@ -27,15 +27,11 @@ public class UnoGame {
     }
 
     public void addPlayers(ArrayList<UnoPlayer> players) {
-        for (UnoPlayer player : players) {
-            this.addPlayer(player);
-        }
+        for (UnoPlayer player : players) this.addPlayer(player);
     }
 
     public void addPlayers(UnoPlayer[] players) {
-        for (UnoPlayer player : players) {
-            this.addPlayer(player);
-        }
+        for (UnoPlayer player : players) this.addPlayer(player);
     }
 
     public void addPlayer(@NotNull UnoPlayer player) {
@@ -64,26 +60,16 @@ public class UnoGame {
 
     private void dealCards(int numCards) {
         this.deck.shuffle();
-        for (int i = 0; i < numCards; i++) {
-            for (UnoPlayer player : this.players) {
-                player.addCard(this.deck.deal());
-            }
-        }
+        for (int i = 0; i < numCards; i++) for (UnoPlayer player : this.players) player.addCard(this.deck.deal());
     }
 
     private void fillDrawPile() {
         //Remove all cards from deck and add to the draw pile (only happens at start)
-        if (this.deck.size() > 0) {
-            while (this.deck.size() > 0) {
-                this.drawPile.add(this.deck.deal());
-            }
-        }
-        //Remove all cards except top card from discard pile and add to the draw pile
-        else if (this.discardPile.size() > 1) {
-            while (this.discardPile.size() > 1) {
-                this.drawPile.add(this.discardPile.deal());
-            }
-        }
+        if (this.deck.size() > 0) while (this.deck.size() > 0)
+            this.drawPile.add(this.deck.deal());
+            //Remove all cards except top card from discard pile and add to the draw pile
+        else if (this.discardPile.size() > 1)
+            while (this.discardPile.size() > 1) this.drawPile.add(this.discardPile.deal());
     }
 
     private UnoCard dealDrawPile() {
@@ -102,19 +88,13 @@ public class UnoGame {
             // Gets the last card of discard pile (top card)
             UnoCard lastCard = this.discardPile.get(this.discardPile.size() - 1);
             //Add a card to player's hand while no card matches
-            while (currentPlayer.getNextCard(lastCard) == null) {
-                currentPlayer.addCard(this.dealDrawPile());
-            }
+            while (currentPlayer.getNextCard(lastCard) == null) currentPlayer.addCard(this.dealDrawPile());
             UnoCard nextCard = currentPlayer.getNextCard(lastCard);
             int rank = nextCard.getRank();
             //Reverse Card -> Switch directions
-            if (rank == 10) {
-                this.switchDirection();
-            }
+            if (rank == 10) this.switchDirection();
             //Skip Card -> increment turn
-            if (rank == 11) {
-                this.incrementTurn();
-            }
+            if (rank == 11) this.incrementTurn();
             //Draw 2 Card -> draw 2 for next player and increment turn
             if (rank == 12) {
                 for (int i = 0; i < 2; i++) nextPlayer.addCard(this.dealDrawPile());
@@ -122,7 +102,7 @@ public class UnoGame {
             }
             //Draw 4 Card -> draw 4 for next player and increment turn
             if (rank == 13) {
-                for (int i = 0; i < 2; i++) nextPlayer.addCard(this.dealDrawPile());
+                for (int i = 0; i < 4; i++) nextPlayer.addCard(this.dealDrawPile());
                 this.incrementTurn();
             }
             this.discardPile.add(nextCard);
@@ -131,9 +111,7 @@ public class UnoGame {
     }
 
     public boolean gameOver() {
-        for (UnoPlayer player : this.players) {
-            if (player.cardsLeft() == 0) return true;
-        }
+        for (UnoPlayer player : this.players) if (player.cardsLeft() == 0) return true;
         return false;
     }
 

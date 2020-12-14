@@ -20,16 +20,12 @@ public class UnoPile {
     }
 
     public UnoCard deal(int index) {
-        if (index >= 0 && this.pile.size() > index) {
-            return this.pile.remove(index);
-        }
+        if (index >= 0 && this.pile.size() > index) return this.pile.remove(index);
         return null;
     }
 
     public UnoCard deal() {
-        if (this.pile.size() > 0) {
-            return this.pile.remove(0);
-        }
+        if (this.pile.size() > 0) return this.pile.remove(0);
         return null;
     }
 

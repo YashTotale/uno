@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.util.Arrays;
 
 public class UnoTester {
     private enum TestingMode {CARDS, PILE, DECK, PLAYER, GAME, ALL}
@@ -9,7 +8,6 @@ public class UnoTester {
     private int numRepaints = 0;
 
     public static void main(String[] args) {
-        System.out.println("Testing classes");
         UnoTester ut = new UnoTester();
         ut.init();
         ut.testStuff();
@@ -69,7 +67,6 @@ public class UnoTester {
 
     private void testUnoGame() {
         UnoGame ug = new UnoGame();
-
     }
 
     private void testUnoPlayer() {
@@ -79,9 +76,7 @@ public class UnoTester {
             UnoPlayer player = new UnoPlayer(name);
 
             //constructor + getName
-            if (!player.getName().equals(name)) {
-                throw new Exception("getName does not work");
-            }
+            if (!player.getName().equals(name)) throw new Exception("getName does not work");
             System.out.println("getName & constructor work");
 
             //addCard + cardsLeft
@@ -117,24 +112,14 @@ public class UnoTester {
                     fourth = player.getNextCard(g0),
                     fifth = player.getNextCard(r6);
 
-            if (!first.equals(g4)) {
-                throw new Exception("getNextCard w/ color does not work");
-            }
-            if (!second.equals(b6)) {
-                throw new Exception("getNextCard w/ rank does not work");
-            }
-            if (!third.equals(wild)) {
-                throw new Exception("getNextCard w/ wild card does not work");
-            }
-            if (!fourth.equals(draw4)) {
-                throw new Exception("getNextCard w/ draw4 card does not work");
-            }
-            if (fifth != null) {
-                throw new Exception("getNextCard w/ no match does not work");
-            }
+            if (!first.equals(g4)) throw new Exception("getNextCard w/ color does not work");
+            if (!second.equals(b6)) throw new Exception("getNextCard w/ rank does not work");
+            if (!third.equals(wild)) throw new Exception("getNextCard w/ wild card does not work");
+            if (!fourth.equals(draw4)) throw new Exception("getNextCard w/ draw4 card does not work");
+            if (fifth != null) throw new Exception("getNextCard w/ no match does not work");
             System.out.println("getNextCard works");
 
-            System.out.println("\nUnoPlayer:\n" + player + "\n\n-----");
+            System.out.println("\nUnoPlayer: " + player + "\n-----");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -148,9 +133,7 @@ public class UnoTester {
             int expectedSize = 0;
 
             //size & constructor
-            if (pile.size() != expectedSize) {
-                throw new Exception("size does not work");
-            }
+            if (pile.size() != expectedSize) throw new Exception("size does not work");
             System.out.println("size & constructor work");
 
             //addInOrder & get
@@ -164,36 +147,24 @@ public class UnoTester {
             pile.addInOrder(third);
             expectedSize++;
 
-            if (!pile.get(0).equals(first)) {
-                throw new Exception("addInOrder or get does not work");
-            }
-            if (!pile.get(1).equals(second)) {
-                throw new Exception("addInOrder or get does not work");
-            }
-            if (!pile.get(2).equals(third)) {
-                throw new Exception("addInOrder or get does not work");
-            }
+            if (!pile.get(0).equals(first)) throw new Exception("addInOrder or get does not work");
+            if (!pile.get(1).equals(second)) throw new Exception("addInOrder or get does not work");
+            if (!pile.get(2).equals(third)) throw new Exception("addInOrder or get does not work");
             System.out.println("addInOrder and get work");
 
             //deal
             UnoCard dealt = pile.deal();
             expectedSize--;
-            if (pile.size() != expectedSize) {
-                throw new Exception("deal does not work");
-            }
-            if (!dealt.equals(first)) {
-                throw new Exception("deal does not work");
-            }
+            if (pile.size() != expectedSize) throw new Exception("deal does not work");
+            if (!dealt.equals(first)) throw new Exception("deal does not work");
             System.out.println("deal works");
 
             //shuffle
             pile.shuffle();
-            if (pile.size() != expectedSize) {
-                throw new Exception("shuffle does not work");
-            }
+            if (pile.size() != expectedSize) throw new Exception("shuffle does not work");
             System.out.println("shuffle works");
 
-            System.out.println("\nUnoPile:\n" + pile + "\n\n-----");
+            System.out.println("\nUnoPile: " + pile + "\n-----");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -206,9 +177,7 @@ public class UnoTester {
             UnoDeck deck = new UnoDeck();
 
             //constructor
-            if (deck.size() != 108) {
-                throw new Exception("UnoDeck constructor does not work");
-            }
+            if (deck.size() != 108) throw new Exception("UnoDeck constructor does not work");
             System.out.println("constructor works");
 
             if (printDeck) System.out.println("\nUnoDeck:\n" + deck + "\n");
@@ -223,30 +192,21 @@ public class UnoTester {
         try {
             System.out.println("\n-----\nTesting UnoCard\n");
 
-            UnoCard g1 = new UnoCard(UnoCard.CardColors.GREEN, 1), b9 = new UnoCard(UnoCard.CardColors.BLUE, 9), y5 = new UnoCard(UnoCard.CardColors.YELLOW, 5), r2 = new UnoCard(UnoCard.CardColors.RED, 2), gReverse = new UnoCard(UnoCard.CardColors.GREEN, 10),
-                    ySkip = new UnoCard(UnoCard.CardColors.YELLOW, 11), rDraw2 = new UnoCard(UnoCard.CardColors.RED, 12), wild = new UnoCard(UnoCard.CardColors.BLACK, 13), wildDraw4 = new UnoCard(UnoCard.CardColors.BLACK, 14);
-
-
-            UnoCard[] listOfCards = new UnoCard[]{g1, b9, y5, r2, gReverse,
-                    ySkip, rDraw2, wild, wildDraw4};
+            UnoCard g1 = new UnoCard(UnoCard.CardColors.GREEN, 1);
 
             //getColor
-            UnoCard.CardColors color = listOfCards[0].getColor();
+            UnoCard.CardColors color = g1.getColor();
 
-            if (!color.equals(UnoCard.CardColors.GREEN)) {
-                throw new Exception("getColor does not work");
-            }
+            if (!color.equals(UnoCard.CardColors.GREEN)) throw new Exception("getColor does not work");
             System.out.println("getColor works");
 
             //getRank
-            int rank = listOfCards[0].getRank();
+            int rank = g1.getRank();
 
-            if (rank != 1) {
-                throw new Exception("getRank does not work");
-            }
+            if (rank != 1) throw new Exception("getRank does not work");
             System.out.println("getRank works");
 
-            System.out.println("\nUnoCard list:\n" + Arrays.toString(listOfCards) + "\n\n-----");
+            System.out.println("\nUnoCard: " + g1 + "\n-----");
 
         } catch (Exception e) {
             e.printStackTrace();

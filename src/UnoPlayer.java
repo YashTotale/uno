@@ -38,29 +38,19 @@ public class UnoPlayer {
 
             //Wild Card
             if (currentColor.equals(UnoCard.CardColors.BLACK)) {
-                if (currentRank == 13) {
-                    wildIndex = i;
-                }
-                if (currentRank == 14) {
-                    draw4Index = i;
-                }
+                if (currentRank == 13) wildIndex = i;
+                if (currentRank == 14) draw4Index = i;
                 continue;
             }
 
             //Previous card is Wild Card -> Play any card
-            if (color.equals(UnoCard.CardColors.BLACK)) {
-                return this.hand.deal(i);
-            }
+            if (color.equals(UnoCard.CardColors.BLACK)) return this.hand.deal(i);
 
             //Play matching color
-            if (currentColor.equals(color)) {
-                return this.hand.deal(i);
-            }
+            if (currentColor.equals(color)) return this.hand.deal(i);
 
             //Play matching rank
-            if (currentRank == rank) {
-                return this.hand.deal(i);
-            }
+            if (currentRank == rank) return this.hand.deal(i);
         }
 
         //Play Wild or Draw4 as last resort
@@ -79,9 +69,8 @@ public class UnoPlayer {
         //Stores the colors and their amounts
         HashMap<UnoCard.CardColors, Integer> colorAmounts = new HashMap();
         //Put all colors except black into hashmap
-        for (UnoCard.CardColors color : UnoCard.CardColors.values()) {
+        for (UnoCard.CardColors color : UnoCard.CardColors.values())
             if (!color.equals(UnoCard.CardColors.BLACK)) colorAmounts.put(color, 0);
-        }
         //Put the corresponding amounts for each color in the hashmap
         for (int i = 0; i < this.hand.size(); i++) {
             UnoCard card = this.hand.get(i);
